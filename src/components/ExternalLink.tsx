@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const ExternalLink = ({
-  className = 'underline',
+  className = 'underline hover:text-purple-600',
   href,
   children,
   ...otherProps

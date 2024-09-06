@@ -32,7 +32,7 @@ const CardTitle = ({
   children,
 }: React.PropsWithChildren<{ as?: React.ElementType; href?: string }>) => {
   return (
-    <Component className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 text-balance">
+    <Component className="text-lg font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 text-balance">
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
   );
@@ -46,7 +46,7 @@ const CardCta = ({ children }: React.PropsWithChildren) => {
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 mt-4 flex items-center text-sm font-medium text-primary"
+      className="relative z-10 mt-4 flex items-center text-sm font-medium text-purple-600"
     >
       {children}
       <span className="ml-1">→</span>

@@ -33,7 +33,7 @@ export const ProjectCard = ({ project }: Props) => {
           <Badge key={techStackItem}>{techStackItem}</Badge>
         ))}
       </p>
-      <div className="relative z-10 mt-auto flex text-sm font-medium text-zinc-400 transition group-hover:text-primary dark:text-zinc-200">
+      <div className="relative z-10 mt-auto flex text-sm font-medium text-zinc-400 transition group-hover:text-purple-600 dark:text-zinc-200">
         {project.link ? (
           <p className="flex items-center">
             <LinkIcon className="h-6 w-6 flex-none" />
@@ -42,7 +42,7 @@ export const ProjectCard = ({ project }: Props) => {
           </p>
         ) : (
           <p className="text-zinc-400 flex items-center gap-x-2">
-            Shut down <span className="rounded-full bg-red-700 w-1 h-1" />
+            Comming Soon <span className="rounded-full bg-red-700 w-1 h-1" />
           </p>
         )}
       </div>
