@@ -91,13 +91,6 @@ export const DesktopNavigation = (
                             </NavItem>
                         );
                     }
-                    if (item.type === 'pdf') {
-                        return (
-                            <a href={item.href}>
-                                {item.name}
-                            </a>
-                        );
-                    }
 
                     return (
                         <a

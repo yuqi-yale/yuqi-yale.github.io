@@ -6,7 +6,6 @@ import { formatDate } from '../../lib/date';
 import { Note } from '../../lib/notesApi';
 import { Card } from '../Card';
 import { ANIMATION_FROM_PROPS, ANIMATION_TO_PROPS } from '../../lib/animation';
-import MathematicaIntro from '../../../src/images/Notes/1.png'
 
 const StaticBadge = ({ className, children }: React.PropsWithChildren<{ className?: string }>) => (
     <span
@@ -31,7 +30,7 @@ export const NotePreview = ({ note, dense }: Props) => {
             whileInView={ANIMATION_TO_PROPS}
             viewport={{ once: true }}
         >
-            <article className="grid grid-cols-6 items-baseline">
+            <article className="grid grid-cols-6 items-center">
                 <div className="col-span-3">
                     <Card className="md:col-span-3">
                         <Card.Title href={`/notes/${note.slug}`}>{note.title}</Card.Title>
@@ -48,10 +47,13 @@ export const NotePreview = ({ note, dense }: Props) => {
                         <Card.Cta>Read note</Card.Cta>
                     </Card>
                 </div>
-                <div className="col-span-2">
-                    {/* <img src={`${MathematicaIntro.src}`} alt="Pulpit rock" width="200" height="150"/> */}
-                    <p>{note.coverImage}</p>
-                </div>
+                <Card className="md:col-span-2 relative">
+                    {note.coverImage
+                        ? <a href={`/notes/${note.slug}`}>
+                            <img className='scale-75 hover:scale-100' src={note.coverImage} />
+                        </a>
+                        : null}
+                </Card>
                 {!dense && (
                     <Card.Eyebrow as="time" dateTime={note.publishedAt} className="mt-1 hidden md:block">
                         {formatDate(note.publishedAt)}

@@ -7,6 +7,7 @@ import { XIcon } from '../../components/icons/XIcon';
 import { NoteLayout } from '../../components/notes/NoteLayout';
 import { NotionBlockRenderer } from '../../components/notion/NotionBlockRenderer';
 import { Note as NoteType, notesApi } from '../../lib/notesApi';
+import { LinkedInIcon } from 'src/components/icons/LinkedInIcon';
 
 type Props = {
   note: NoteType;
@@ -56,11 +57,12 @@ export default function Note({
 
           <a
             className="group block text-xl font-semibold md:text-3xl no-underline"
-            href={`http://x.com/share?text=${title}&url=${url}`}
+            // href={`http://x.com/share?text=${title}&url=${url}`}
+            href='https://www.linkedin.com/in/yuq1/' target='_blank'
           >
             <h4 className="max-w-lg flex cursor-pointer flex-col duration-200 ease-in-out group-hover:text-purple-600 group-hover:fill-primary fill-white text-wrap">
-              <XIcon className="my-6 h-10 w-10 transform transition-transform group-hover:-rotate-12 text-black dark:text-white group-hover:text-purple-600" />
-              Click here to share this article with your friends on X if you liked it.
+              <LinkedInIcon className="my-6 h-10 w-10 transform transition-transform group-hover:-rotate-12 text-black dark:text-white group-hover:text-purple-600" />
+              Click here to connect me at Linkedin~
             </h4>
           </a>
         </div>
