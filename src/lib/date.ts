@@ -6,3 +6,12 @@ export function formatDate(dateString: string) {
     timeZone: 'UTC',
   });
 }
+
+export function formatDateMY(dateString: string) {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'UTC',
+    });
+  }
+  

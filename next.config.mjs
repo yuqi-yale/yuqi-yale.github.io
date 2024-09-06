@@ -21,15 +21,15 @@ const config = {
       },
     ],
   },
-  async redirects() {
-    return [
-      {
-        source: '/blog/:slug*',
-        destination: '/notes/:slug*',
-        permanent: true,
-      },
-    ];
-  },
+//   async redirects() {
+//     return [
+//       {
+//         source: '/notes/:slug*',
+//         destination: '/blogs/:slug*',
+//         permanent: true,
+//       },
+//     ];
+//   },
 };
 
 export default config;

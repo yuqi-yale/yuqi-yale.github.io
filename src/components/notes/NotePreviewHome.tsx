@@ -33,7 +33,7 @@ export const NotePreviewHome = ({ note, dense }: Props) => {
             <article className="grid grid-cols-4 items-baseline">
                 <div className="col-span-3">
                     <Card className="md:col-span-3">
-                        <Card.Title href={`/notes/${note.slug}`}>{note.title}</Card.Title>
+                        <Card.Title href={`/blogs/${note.slug}`}>{note.title}</Card.Title>
                         <Card.Eyebrow
                             as="time"
                             dateTime={note.publishedAt}

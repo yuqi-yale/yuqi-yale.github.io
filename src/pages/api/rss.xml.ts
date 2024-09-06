@@ -2,21 +2,32 @@ import { NextApiHandler } from 'next';
 import RSS from 'rss';
 
 import { notesApi } from '../../lib/notesApi';
+import { publicationApi } from '../../lib/publicationApi';
 
 const rss: NextApiHandler = async (req, res) => {
   const feed = new RSS({
-    title: 'Bartosz Jarocki',
-    site_url: 'https://jarocki.me',
-    feed_url: 'https://jarocki.me/rss.xml',
+    title: 'Yuqi Zhao',
+    site_url: 'https://yuqiweb.com',
+    feed_url: 'https://yuqiweb.com/rss.xml',
   });
 
   const allPosts = await notesApi.getNotes();
   allPosts.map((post) => {
     feed.item({
       title: post.title,
-      url: `https://jarocki.me/notes/${post.slug}`,
+      url: `https://yuqiweb.com/blogs/${post.slug}`,
       date: post.publishedAt,
       description: post.description,
+    });
+  });
+
+  const allPublications = await publicationApi.getNotes();
+  allPublications.map((post) => {
+    feed.item({
+      title: post.title,
+      url: `https://yuqiweb.com/publications/${post.slug}`,
+      date: post.year,
+      description: post.author,
     });
   });
 

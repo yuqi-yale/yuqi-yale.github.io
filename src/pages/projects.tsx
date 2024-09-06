@@ -6,8 +6,8 @@ import { ProjectCard } from '../components/ProjectCard';
 import { MyCurrentProjects, MyPastProjects } from '../data/lifeApi';
 import { ANIMATION_FROM_PROPS, ANIMATION_TO_PROPS } from '../lib/animation';
 
-const seoTitle = 'Creating';
-const seoDescription = "Things I've made trying to put my dent in the universe.";
+const seoTitle = 'Projects';
+const seoDescription = "Projects from past to Now.";
 
 export default function Creating() {
   return (
@@ -25,7 +25,7 @@ export default function Creating() {
         }}
       />
       <PageLayout
-        title="Things I've made trying to put my dent in the universe."
+        title="Projects from past to Now."
         intro="A list of projects I've worked on, I'm working on and I will work on."
       >
         <h2 className="text-2xl font-bold tracking-tight">Now</h2>

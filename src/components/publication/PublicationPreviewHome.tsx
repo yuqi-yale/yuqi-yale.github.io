@@ -23,17 +23,17 @@ interface Props {
     dense?: boolean;
 }
 
-export const NotePreview = ({ note, dense }: Props) => {
+export const NotePreviewHome = ({ note, dense }: Props) => {
     return (
         <motion.div
             initial={ANIMATION_FROM_PROPS}
             whileInView={ANIMATION_TO_PROPS}
             viewport={{ once: true }}
         >
-            <article className="grid grid-cols-6 items-center">
+            <article className="grid grid-cols-4 items-baseline">
                 <div className="col-span-3">
                     <Card className="md:col-span-3">
-                        <Card.Title href={`/blogs/${note.slug}`}>{note.title}</Card.Title>
+                        <Card.Title href={`/publications/${note.slug}`}>{note.title}</Card.Title>
                         <Card.Eyebrow
                             as="time"
                             dateTime={note.publishedAt}
@@ -47,13 +47,6 @@ export const NotePreview = ({ note, dense }: Props) => {
                         <Card.Cta>Read note</Card.Cta>
                     </Card>
                 </div>
-                <Card className="md:col-span-2 relative">
-                    {note.coverImage
-                        ? <a href={`/blogs/${note.slug}`}>
-                            <img className='scale-75 hover:scale-100' src={note.coverImage} />
-                        </a>
-                        : null}
-                </Card>
                 {!dense && (
                     <Card.Eyebrow as="time" dateTime={note.publishedAt} className="mt-1 hidden md:block">
                         {formatDate(note.publishedAt)}

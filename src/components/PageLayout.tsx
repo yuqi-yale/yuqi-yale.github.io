@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { Container } from './Container';
+import { SocialMedia } from 'src/data/lifeApi';
+import { SocialLink } from './SocialLink';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
@@ -15,6 +17,16 @@ export const PageLayout = ({ title, intro, children, ...rest }: React.PropsWithC
           {title}
         </h1>
         <p className="mt-6 text-base text-balance">{intro}</p>
+        <div className="mt-6 flex gap-6">
+                            {SocialMedia.map((socialProfile) => (
+                                <SocialLink
+                                    key={socialProfile.name}
+                                    aria-label={`Follow on ${socialProfile.name}`}
+                                    href={socialProfile.link}
+                                    icon={socialProfile.icon}
+                                />
+                            ))}
+                        </div>
       </header>
       <div className="mt-16 sm:mt-20">{children}</div>
     </Container>

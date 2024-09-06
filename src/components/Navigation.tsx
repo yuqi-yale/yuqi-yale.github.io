@@ -6,6 +6,7 @@ import { Fragment } from 'react';
 
 import { ChevronDownIcon } from './icons/ChevronDownIcon';
 import { CloseIcon } from './icons/CloseIcon';
+import { Description } from '@headlessui/react/dist/components/description/description';
 
 export const NavigationItems = [
     {
@@ -14,13 +15,18 @@ export const NavigationItems = [
         type: 'internal',
     },
     {
-        name: 'Notes',
-        href: '/notes',
+        name: 'Blogs',
+        href: '/blogs',
         type: 'internal',
     },
+    // {
+    //     name: 'Projects',
+    //     href: '/projects',
+    //     type: 'internal',
+    // },
     {
-        name: 'Projects',
-        href: '/projects',
+        name: 'Publications',
+        href: '/publications',
         type: 'internal',
     },
     // {
@@ -37,6 +43,7 @@ export const NavigationItems = [
         name: 'Resume',
         href: 'https://yuqiweb.com/authors/admin/CV_Yuqi_ZHAO.pdf',
         type: 'external',
+        Description: 'Suggest reading About',
     },
 
 ] as const;
@@ -98,6 +105,7 @@ export const DesktopNavigation = (
                             className="transition hover:text-purple-600 px-3 py-2"
                             href={item.href}
                             target="_blank"
+                            title={item.Description}
                         >
                             {item.name}
                         </a>

@@ -6,7 +6,7 @@ import { PageLayout } from '../../components/PageLayout';
 import { NotePreview } from '../../components/notes/NotePreview';
 import { Note, notesApi } from '../../lib/notesApi';
 
-const seoTitle = 'Notes';
+const seoTitle = 'Blogs';
 const seoDescription =
   'All of my thoughts on programming, building products, leadership, and more. Not structured.';
 
@@ -27,8 +27,8 @@ export default function Notes({ notes, tags }: Props) {
         }}
       />
       <PageLayout
-        title="Notes on research, projects, and daily life."
-        intro="All of my thoughts on programming, building products, leadership, travelling, whisky, and other random stuff. Not structured."
+        title="Blogs on research, projects, and daily life."
+        intro="My experience, daily life, and other random thoughts. Message/Email to me if you have any ideas."
       >
         <h3 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">Tags</h3>
        

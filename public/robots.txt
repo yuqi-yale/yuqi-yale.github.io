@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://jarocki.me
+Host: https://yuqiweb.com
 
 # Sitemaps
-Sitemap: https://jarocki.me/sitemap.xml
+Sitemap: https://yuqiweb.com/sitemap.xml

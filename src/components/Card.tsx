@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import Link, { LinkProps } from 'next/link';
 import React from 'react';
+import { InternalLink } from './InternalLink';
 
 const CardRoot = ({
     as: Component = 'div',
@@ -54,6 +55,21 @@ const CardCta = ({ children }: React.PropsWithChildren) => {
     );
 };
 
+const CardCtaLink = ({
+    as: Component = 'div',
+    href,
+    children,
+}: React.PropsWithChildren<{ as?: React.ElementType; href?: string }>) => {
+    return (
+        <Component
+            aria-hidden="true"
+            className="relative z-10 mt-4 flex items-center text-sm font-medium text-purple-600">
+            {href ? <InternalLink href={href}>{children}</InternalLink> : children}
+            <span className="ml-1">→</span>
+        </Component>
+    );
+};
+
 const CardEyebrow = ({
     as: Component = 'p',
     decorate = false,
@@ -91,5 +107,6 @@ export const Card = Object.assign(CardRoot, {
     Title: CardTitle,
     Description: CardDescription,
     Cta: CardCta,
+    CtaLink:CardCtaLink,
     Eyebrow: CardEyebrow,
 });

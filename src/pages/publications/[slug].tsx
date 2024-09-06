@@ -3,10 +3,9 @@ import { ArticleJsonLd, NextSeo } from 'next-seo';
 import Prism from 'prismjs';
 import { useEffect } from 'react';
 
-import { XIcon } from '../../components/icons/XIcon';
-import { NoteLayout } from '../../components/notes/NoteLayout';
+import { PublicationLayout } from '../../components/publication/PublicationLayout';
 import { NotionBlockRenderer } from '../../components/notion/NotionBlockRenderer';
-import { Note as NoteType, notesApi } from '../../lib/notesApi';
+import { Publication as NoteType, publicationApi } from '../../lib/publicationApi';
 import { LinkedInIcon } from 'src/components/icons/LinkedInIcon';
 
 type Props = {
@@ -14,13 +13,13 @@ type Props = {
   noteContent: any[];
 };
 
-export default function Note({
-  note: { title, description, createdAt, slug },
+export default function Publication({
+  note: { title, author, year, slug },
   noteContent,
   previousPathname,
 }: Props & { previousPathname: string }) {
-  const url = `${process.env.NEXT_PUBLIC_URL}/notes/${slug}`;
-  const openGraphImageUrl = `${process.env.NEXT_PUBLIC_URL}/api/og?title=${title}&description=${description}`;
+  const url = `${process.env.NEXT_PUBLIC_URL}/publications/${slug}`;
+  const openGraphImageUrl = `${process.env.NEXT_PUBLIC_URL}/api/og?title=${title}&description=${author}`;
 
   useEffect(() => {
     Prism.highlightAll();
@@ -30,7 +29,7 @@ export default function Note({
     <>
       <NextSeo
         title={title}
-        description={description}
+        description={author}
         canonical={url}
         openGraph={{
           images: [{ url: openGraphImageUrl }],
@@ -40,12 +39,12 @@ export default function Note({
         url={url}
         images={[openGraphImageUrl]}
         title={title}
-        datePublished={createdAt}
-        authorName="Bartosz Jarocki"
-        description={description}
+        datePublished={year}
+        authorName="Yuqi Zhao"
+        description={author}
       />
-      <NoteLayout
-        meta={{ title, description, date: createdAt }}
+      <PublicationLayout
+        meta={{ title, description: author, date: year }}
         previousPathname={previousPathname}
       >
         <div className="pb-32">
@@ -66,14 +65,14 @@ export default function Note({
             </h4>
           </a>
         </div>
-      </NoteLayout>
+      </PublicationLayout>
     </>
   );
 }
 
 export const getStaticProps: GetStaticProps<Props, { slug: string }> = async (context) => {
   const slug = context.params?.slug;
-  const allNotes = await notesApi.getNotes();
+  const allNotes = await publicationApi.getNotes();
   const note = allNotes.find((note) => note.slug === slug);
 
   if (!note) {
@@ -82,7 +81,7 @@ export const getStaticProps: GetStaticProps<Props, { slug: string }> = async (co
     };
   }
 
-  const noteContent = await notesApi.getNote(note.id);
+  const noteContent = await publicationApi.getNote(note.id);
 
   return {
     props: {
@@ -94,7 +93,7 @@ export const getStaticProps: GetStaticProps<Props, { slug: string }> = async (co
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await notesApi.getNotes();
+  const posts = await publicationApi.getNotes();
 
   return {
     paths: posts.map((post) => ({ params: { slug: post.slug } })),
