@@ -4,7 +4,7 @@ import Hongkong from './Hongkong.jpeg'
 import JJ20 from './JJ20.jpeg'
 import Marathon from './Marathon.jpeg'
 import NYC from './NYC.jpeg'
-import Switzerland from './Switzerland.jpeg'
+import Switzerland from './Switzerland.jpg'
 import Xinjiang from './Xinjiang.jpeg'
 
 export const travelImages = [
