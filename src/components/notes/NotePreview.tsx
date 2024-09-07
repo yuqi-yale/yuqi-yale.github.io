@@ -50,13 +50,14 @@ export const NotePreview = ({ note, dense }: Props) => {
                 <Card className="md:col-span-2 relative">
                     {note.coverImage
                         ? <a href={`/blogs/${note.slug}`}>
-                            <img className='scale-75 hover:scale-100' src={note.coverImage} />
+                            <img className='scale-75 hover:scale-100' alt="" src={note.coverImage} />
                         </a>
                         : null}
                 </Card>
                 {!dense && (
                     <Card.Eyebrow as="time" dateTime={note.publishedAt} className="mt-1 hidden md:block">
                         {formatDate(note.publishedAt)}
+                        <br />
                         {note.inProgress && <StaticBadge className="mt-2">Work in progress</StaticBadge>}
                     </Card.Eyebrow>
                 )}

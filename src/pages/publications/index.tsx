@@ -31,7 +31,7 @@ export default function Publications({ notes, tagsPub }: Props) {
             />
             <PageLayout
                 title="Publications"
-                intro="The fantastic research I & my friends have been made."
+                intro="The fantastic research my friends & I have been made."
             >
                 <h3 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">Tags</h3>
 

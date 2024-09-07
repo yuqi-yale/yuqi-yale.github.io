@@ -15,20 +15,20 @@ export const About = (
         I&apos;m currently pursuing my <b>PhD degree</b> in the <b>Applied Physics Department</b> at <b>Yale
             University</b>, and I&apos;m interested in Photonics Integrated Design and Maker projects. I am
         now doing 2D waveguide design with <ExternalLink
-            href="https://www.lgwrightlab.com/team"><i>𝐏𝐫𝐨𝐟. 𝐋𝐨𝐠𝐚𝐧 𝐖𝐫𝐢𝐠𝐡𝐭</i></ExternalLink> in <ExternalLink href="https://www.lgwrightlab.com/"><i>𝐋𝐖𝐀𝐏𝐋@𝐘𝐚𝐥𝐞</i></ExternalLink>.
+            href="https://www.lgwrightlab.com/team">𝐏𝐫𝐨𝐟. 𝐋𝐨𝐠𝐚𝐧 𝐖𝐫𝐢𝐠𝐡𝐭</ExternalLink> in <ExternalLink href="https://www.lgwrightlab.com/">𝐋𝐖𝐀𝐏𝐋@𝐘𝐚𝐥𝐞</ExternalLink>.
         <br />
         <br />
         Previously, I obtained my Bachelor&apos;s degree in Opto-Electronics Info Science and
         Engineering from Chu Kochen Honors College, Zhejiang University. I have research
         experience in <ExternalLink
             href="https://person.zju.edu.cn/person/attachments/2022-04/01-1651153578-853956.pdf"
-        ><i>𝐒𝐈𝐍𝐆@𝐙𝐉𝐔</i></ExternalLink> advised by <ExternalLink
+        >𝐒𝐈𝐍𝐆@𝐙𝐉𝐔</ExternalLink> advised by <ExternalLink
             href="https://person.zju.edu.cn/dxdai/569878.html"
-        ><i>𝐏𝐫𝐨𝐟. 𝐃𝐚𝐨𝐱𝐢𝐧 𝐃𝐚𝐢</i></ExternalLink> and also a full-time
+        >𝐏𝐫𝐨𝐟. 𝐃𝐚𝐨𝐱𝐢𝐧 𝐃𝐚𝐢</ExternalLink> and also a full-time
         exchange researcher in <ExternalLink href="https://www.epfl.ch/labs/k-lab/"
-        ><i>𝐋𝐏𝐐𝐌@𝐄𝐏𝐅𝐋</i></ExternalLink>,
+        >𝐋𝐏𝐐𝐌@𝐄𝐏𝐅𝐋</ExternalLink>,
         advised by <ExternalLink href="https://people.epfl.ch/tobias.kippenberg?lang=en"
-        ><i>𝐏𝐫𝐨𝐟. 𝐓𝐨𝐛𝐢𝐚𝐬 𝐊𝐢𝐩𝐩𝐞𝐧𝐛𝐞𝐫𝐠</i></ExternalLink>.
+        >𝐏𝐫𝐨𝐟. 𝐓𝐨𝐛𝐢𝐚𝐬 𝐊𝐢𝐩𝐩𝐞𝐧𝐛𝐞𝐫𝐠</ExternalLink>.
     </>
 );
 

@@ -40,7 +40,7 @@ export const NavigationItems = [
         type: 'internal',
     },
     {
-        name: 'Resume',
+        name: 'CV',
         href: 'https://yuqiweb.com/authors/admin/CV_Yuqi_ZHAO.pdf',
         type: 'external',
         Description: 'Suggest reading About',

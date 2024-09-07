@@ -53,13 +53,14 @@ export const PublicationPreview = ({ note, dense }: Props) => {
                 <Card className="md:col-span-2 relative">
                     {note.coverImage
                         ? <a href={`/publications/${note.slug}`}>
-                            <img className='scale-100 hover:scale-125' src={note.coverImage} />
+                            <img className='scale-100 hover:scale-125' alt="" src={note.coverImage} />
                         </a>
                         : null}
                 </Card>
                 {!dense && (
                     <Card.Eyebrow as="time" dateTime={note.year} className="mt-1 hidden md:block">
                         {formatDateMY(note.year)}
+                        <br />
                         {note.isPublished && <StaticBadge className="mt-2">{note.express}</StaticBadge>}
                     </Card.Eyebrow>
                 )}

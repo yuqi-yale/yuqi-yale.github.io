@@ -2,13 +2,14 @@ import Image from 'next/image';
 
 import { Experience } from '../data/lifeApi';
 import { ResearchIcon } from './icons/ResearchIcon';
+import { InternalLink } from './InternalLink';
 
 export const Resume = () => {
   return (
     <div className="max-w-[420px] rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <ResearchIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3 text-lg">Experience - Details in Resume </span>
+        <span className="ml-3 text-lg">Experience - Details in <InternalLink href='/about'>About/CV</InternalLink></span>
       </h2>
       <ol className="mt-6 space-y-4">
         {Experience.map((role, roleIndex) => (
