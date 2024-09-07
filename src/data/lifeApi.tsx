@@ -12,13 +12,13 @@ export const Name = 'Yuqi Zhao (赵宇骐)';
 
 export const About = (
     <>
-        I'm currently pursuing my <b>PhD degree</b> in the <b>Applied Physics Department</b> at <b>Yale
-            University</b>, and I'm interested in Photonics Integrated Design and Maker projects. I am
+        I&apos;m currently pursuing my <b>PhD degree</b> in the <b>Applied Physics Department</b> at <b>Yale
+            University</b>, and I&apos;m interested in Photonics Integrated Design and Maker projects. I am
         now doing 2D waveguide design with <ExternalLink
             href="https://www.lgwrightlab.com/team"><i>𝐏𝐫𝐨𝐟. 𝐋𝐨𝐠𝐚𝐧 𝐖𝐫𝐢𝐠𝐡𝐭</i></ExternalLink> in <ExternalLink href="https://www.lgwrightlab.com/"><i>𝐋𝐖𝐀𝐏𝐋@𝐘𝐚𝐥𝐞</i></ExternalLink>.
         <br />
         <br />
-        Previously, I obtained my Bachelor's degree in Opto-Electronics Info Science and
+        Previously, I obtained my Bachelor&apos;s degree in Opto-Electronics Info Science and
         Engineering from Chu Kochen Honors College, Zhejiang University. I have research
         experience in <ExternalLink
             href="https://person.zju.edu.cn/person/attachments/2022-04/01-1651153578-853956.pdf"
@@ -84,7 +84,6 @@ export const SocialMedia = [
     { name: 'Email', link: 'mailto:yuqi.zhao@yale.edu', icon: EmailIcon },
 ] as const;
 
-// TODO at first page show research or maybe education?
 export const Experience = [
     {
         organization: 'LWAPL, Yale',

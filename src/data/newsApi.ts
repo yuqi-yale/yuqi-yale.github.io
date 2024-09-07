@@ -36,4 +36,4 @@ export const NewsContent: NewsType[] = [
             href: 'https://www.yale.edu/'
         },
     },
-] as const;
+];
