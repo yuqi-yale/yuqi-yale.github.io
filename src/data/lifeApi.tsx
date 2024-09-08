@@ -7,7 +7,7 @@ import Yalelogo from '../images/logos/Yale.svg'
 import yuqilogo from 'public/favicon/icon-256x256.png'
 import { LinkedInIcon } from '../components/icons/LinkedInIcon';
 import { EmailIcon } from 'src/components/icons/EmailIcon';
-import { Description } from '@headlessui/react/dist/components/description/description';
+import { CVIcon } from 'src/components/icons/CVIcon';
 
 export const Name = 'Yuqi Zhao (赵宇骐)';
 
@@ -80,9 +80,10 @@ export const MyPastProjects: Project[] = [
 export const SocialMedia = [
     // { name: 'Twitter', link: '', icon: XIcon },
     { name: 'Google_Scholar', link: 'https://scholar.google.com/citations?user=au1qK1YAAAAJ&hl=zh-CN', icon: GoogleScholarIcon },
-    { name: 'Github', link: 'https://github.com/yuqi-yale/', icon: GitHubIcon },
-    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/yuq1', icon: LinkedInIcon },
     { name: 'Email', link: 'mailto:yuqi.zhao@yale.edu', icon: EmailIcon },
+    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/yuq1', icon: LinkedInIcon },
+    { name: 'Github', link: 'https://github.com/yuqi-yale/', icon: GitHubIcon },
+    { name: 'CV', link: '', icon: CVIcon },
 ] as const;
 
 export const Experience = [

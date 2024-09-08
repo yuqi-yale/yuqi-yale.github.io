@@ -47,7 +47,7 @@ export const PublicationPreview = ({ note, dense }: Props) => {
                         <Card.Description>
                             <HighlightedDescription description={note.description} />
                         </Card.Description>
-                        <Card.CtaLink href={`/publications/${note.slug}`}>Open Post</Card.CtaLink>
+                        {note.havePost && <Card.CtaLink href={`/publications/${note.slug}`}>Open Post</Card.CtaLink>}
                         <Card.CtaLink href={note.url}>Open URL</Card.CtaLink>
                     </Card>
                 </div>

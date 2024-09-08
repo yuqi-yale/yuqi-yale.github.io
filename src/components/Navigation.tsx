@@ -39,12 +39,12 @@ export const NavigationItems = [
         href: '/about',
         type: 'internal',
     },
-    {
-        name: 'CV',
-        href: 'https://yuqiweb.com/authors/admin/CV_Yuqi_ZHAO.pdf',
-        type: 'external',
-        Description: 'Suggest reading About',
-    },
+    // {
+    //     name: 'CV',
+    //     href: 'https://yuqiweb.com/authors/admin/CV_Yuqi_ZHAO.pdf',
+    //     type: 'external',
+    //     Description: 'Suggest reading About',
+    // },
 
 ] as const;
 

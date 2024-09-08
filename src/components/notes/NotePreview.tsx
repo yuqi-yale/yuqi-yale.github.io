@@ -52,7 +52,7 @@ export const NotePreview = ({ note, dense }: Props) => {
                 <Card className="md:col-span-2 relative">
                     {note.coverImage
                         ? <a href={`/blogs/${note.slug}`}>
-                            <Image width={250} height={120} className='scale-75 hover:scale-100' alt="" src={note.coverImage} />
+                            <Image width={250} height={120} className='scale-100 hover:scale-125' alt="" src={note.coverImage} />
                         </a>
                         : null}
                 </Card>

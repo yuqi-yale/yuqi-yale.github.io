@@ -22,6 +22,7 @@ export type Publication = {
     description: string;
     slug: string;
     isPublished: boolean;
+    havePost: boolean;
 };
 
 const noop = async (block: BlockObjectResponse) => block;
@@ -169,6 +170,8 @@ class PublicationApi {
                         'rich_text' in page.properties.slug ? page.properties.slug.rich_text[0].plain_text : '',
                     isPublished:
                         'checkbox' in page.properties.published ? page.properties.published.checkbox : false,
+                    havePost:
+                        'checkbox' in page.properties.havePost ? page.properties.havePost.checkbox : false,
                     year:
                         'date' in page.properties.year ? page.properties.year.date!.start : '',
                     author:
