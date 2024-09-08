@@ -42,10 +42,11 @@ export const NotePreview = ({ note, dense }: Props) => {
                             decorate
                         >
                             {formatDate(note.publishedAt)}
-                            {note.inProgress && <StaticBadge className="ml-4">Work in progress</StaticBadge>}
+                            {note.inProgress && <StaticBadge className="ml-4">In progress</StaticBadge>}
+                            {!note.inProgress && <StaticBadge className="ml-4">Finished</StaticBadge>}
                         </Card.Eyebrow>
                         <Card.Description>{note.description}</Card.Description>
-                        <Card.Cta>Read note</Card.Cta>
+                        <Card.Cta>Read blog</Card.Cta>
                     </Card>
                 </div>
                 <Card className="md:col-span-2 relative">
@@ -59,7 +60,8 @@ export const NotePreview = ({ note, dense }: Props) => {
                     <Card.Eyebrow as="time" dateTime={note.publishedAt} className="mt-1 hidden md:block">
                         {formatDate(note.publishedAt)}
                         <br />
-                        {note.inProgress && <StaticBadge className="mt-2">Work in progress</StaticBadge>}
+                        {note.inProgress && <StaticBadge className="mt-2">In progress</StaticBadge>}
+                        {!note.inProgress && <StaticBadge className="mt-2">Finishied</StaticBadge>}
                     </Card.Eyebrow>
                 )}
             </article>
