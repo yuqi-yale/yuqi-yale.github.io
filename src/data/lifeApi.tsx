@@ -83,7 +83,7 @@ export const SocialMedia = [
     { name: 'Email', link: 'mailto:yuqi.zhao@yale.edu', icon: EmailIcon },
     { name: 'LinkedIn', link: 'https://www.linkedin.com/in/yuq1', icon: LinkedInIcon },
     { name: 'Github', link: 'https://github.com/yuqi-yale/', icon: GitHubIcon },
-    { name: 'CV', link: '/author/Resume_Yuqi_zHAO.pdf', icon: CVIcon },
+    { name: 'CV', link: '/author/Resume_Yuqi_ZHAO.pdf', icon: CVIcon },
 ] as const;
 
 export const Experience = [
