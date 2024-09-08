@@ -18,7 +18,7 @@ export const Footer = () => {
                                     </NavLink>
                                 ))}
                             <div className="flex justify-center mt-0.5">
-                                <a><Image alt="" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwww.yuqiweb.com&count_bg=%23CBAAF3&title_bg=%238940E4&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" /></a>
+                                <a><img alt="" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwww.yuqiweb.com&count_bg=%23CBAAF3&title_bg=%238940E4&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" /></a>
                             </div>
                             </div>
                             <p className="text-sm text-zinc-400 dark:text-zinc-500">
