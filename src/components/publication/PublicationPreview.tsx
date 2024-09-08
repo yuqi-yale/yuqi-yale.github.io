@@ -74,13 +74,12 @@ interface DescriptionProps {
     description: string;
 }
 const HighlightedDescription: React.FC<DescriptionProps> = ({ description }) => {
-    // 将字符串拆分为包含 "Yuqi Zhao" 和其他部分的数组
-    const parts = description.split(/(Yuqi Zhao)/g);
+    const parts = description.split(/(Y Zhao)/g);
 
     return (
         <span>
             {parts.map((part, index) =>
-                part === 'Yuqi Zhao' ? <strong key={index}>{part}</strong> : part
+                part === 'Y Zhao' ? <strong key={index}>{part}</strong> : part
             )}
         </span>
     );
