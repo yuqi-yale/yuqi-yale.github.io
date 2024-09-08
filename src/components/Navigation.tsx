@@ -6,7 +6,6 @@ import { Fragment } from 'react';
 
 import { ChevronDownIcon } from './icons/ChevronDownIcon';
 import { CloseIcon } from './icons/CloseIcon';
-import { Description } from '@headlessui/react/dist/components/description/description';
 
 export const NavigationItems = [
     {
@@ -105,7 +104,7 @@ export const DesktopNavigation = (
                             className="transition hover:text-purple-600 px-3 py-2"
                             href={item.href}
                             target="_blank"
-                            title={item.Description}
+                            
                         >
                             {item.name}
                         </a>
