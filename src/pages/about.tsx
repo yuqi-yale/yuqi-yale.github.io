@@ -87,7 +87,7 @@ export default function AboutMe() {
                 </div>
                 <div className='mt-8 flex justify-center'>
                     <div className="w-[450px] h-64 overflow-hidden rounded-lg">
-                        <Image className="object-cover w-full h-full" alt="" src="https://mapmyvisitors.com/map.png?cl=6639a6&w=1000&t=n&d=HyyCemLzcS2Mj6CdjrIqBuosnn6PyGMtOLb8rCIbDdw&co=ffffff&ct=7a7a7a"/>
+                        <img className="object-cover w-full h-full" alt="" src="https://mapmyvisitors.com/map.png?cl=6639a6&w=1000&t=n&d=HyyCemLzcS2Mj6CdjrIqBuosnn6PyGMtOLb8rCIbDdw&co=ffffff&ct=7a7a7a"/>
                     </div>
                 </div>
             </Container >
