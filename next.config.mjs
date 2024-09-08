@@ -1,4 +1,4 @@
-const config = {
+const nextConfig = {
     swcMinify: true,
     reactStrictMode: true,
     experimental: {
@@ -35,4 +35,4 @@ const config = {
     }
 };
 
-export default config;
+export default nextConfig;
