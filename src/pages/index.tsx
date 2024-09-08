@@ -1,17 +1,15 @@
-import { compareDesc } from 'date-fns';
 import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 
 import { Container } from '../components/Container';
 import { PageTitle } from '../components/PageTitle';
 import { Photos } from '../components/Photos';
-import { Resume } from '../components/Resume';
+import { ExperienceBox } from '../components/ExperienceList';
 import { SocialLink } from '../components/SocialLink';
 import { NotePreviewHome } from '../components/notes/NotePreviewHome';
 import { About, Name, SocialMedia } from '../data/lifeApi';
 import { Note, notesApi } from '../lib/notesApi';
 import { News } from '../components/News';
-import { NewsContent } from 'src/data/newsApi';
 
 const seoTitle = 'Yuqi Zhao';
 const seoDescription =
@@ -73,7 +71,7 @@ export default function Home({ latestNotes }: Props) {
                         ))}
                     </div>
                     <div className="lg:ml-auto space-y-10 lg:pl-16 xl:pl-24">
-                        <Resume />
+                        <ExperienceBox />
                     </div>
                 </div>
             </Container>
@@ -88,6 +86,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
     return {
         props: { latestNotes },
-        revalidate: 10,
+        revalidate: 5,
     };
 };

@@ -10,42 +10,42 @@ import Xinjiang from './Xinjiang.jpeg'
 export const travelImages = [
     {
         img: Chongqing,
-        title: "Chongqing",
+        title: "Chongqing, 2024",
         alt: "",
       },
     {
         img: Disney,
-        title: "Disney, Shanghai",
+        title: "Disney, Shanghai, 2024",
         alt: "",
       },
     {
         img: Hongkong,
-        title: "Hongkong",
+        title: "Hongkong, 2024",
         alt: "",
       },
     {
         img: JJ20,
-        title: "JJ20, Shenzhen",
+        title: "JJ20, Shenzhen, 2024",
         alt: "",
       },
     {
         img: Marathon,
-        title: "Marathon, New Haven",
+        title: "Marathon, New Haven, 2024",
         alt: "",
       },
     {
         img: NYC,
-        title: "NYC",
+        title: "NYC, 2024",
         alt: "",
       },
     {
         img: Switzerland,
-        title: "Switzerland",
+        title: "Switzerland, 2023",
         alt: "",
       },
     {
         img: Xinjiang,
-        title: "Xinjiang",
+        title: "Xinjiang, 2024",
         alt: "",
       },
 ];

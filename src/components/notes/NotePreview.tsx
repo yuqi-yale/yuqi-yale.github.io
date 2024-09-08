@@ -6,6 +6,7 @@ import { formatDate } from '../../lib/date';
 import { Note } from '../../lib/notesApi';
 import { Card } from '../Card';
 import { ANIMATION_FROM_PROPS, ANIMATION_TO_PROPS } from '../../lib/animation';
+import Image from 'next/image';
 
 const StaticBadge = ({ className, children }: React.PropsWithChildren<{ className?: string }>) => (
     <span
@@ -50,7 +51,7 @@ export const NotePreview = ({ note, dense }: Props) => {
                 <Card className="md:col-span-2 relative">
                     {note.coverImage
                         ? <a href={`/blogs/${note.slug}`}>
-                            <img className='scale-75 hover:scale-100' alt="" src={note.coverImage} />
+                            <Image className='scale-75 hover:scale-100' alt="" src={note.coverImage} />
                         </a>
                         : null}
                 </Card>
