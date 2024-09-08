@@ -23,8 +23,8 @@ export const NewsContent: NewsType[] = [
         date: 'Sept 2024',
         description: 'A fantastic game to build computer!',
         link: {
-            label: 'notes/TuringComplete',
-            href: 'notes/TuringComplete'
+            label: '/blogs/turingComplete',
+            href: '/blogs/turingComplete'
         },
     },
     {
