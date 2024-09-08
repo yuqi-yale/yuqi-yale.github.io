@@ -92,14 +92,14 @@ export const NotionBlockRenderer = ({ block }: Props) => {
       const src = value.type === 'external' ? value.external.url : value.file.url;
       const caption = value.caption ? value.caption[0]?.plain_text : '';
       return (
-        <figure>
+        <figure className='flex justify-center'>
           <Image
             className="object-cover"
             placeholder="blur"
             src={src}
             alt={caption}
             blurDataURL={value.placeholder}
-            width={value.size.width}
+            width={value.size.height>300?300/value.size.width*value.size.height:value.size.width}
             height={value.size.height}
           />
           {caption && <figcaption>{caption}</figcaption>}
