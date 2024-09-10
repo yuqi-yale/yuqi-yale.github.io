@@ -208,8 +208,10 @@ const NotionText = ({ textItems }: { textItems: TextRichTextItemResponse[] }) =>
               })}
               style={color !== 'default' ? { color } : {}}
             >
-              {textItem.type === 'equation'
+              {textItem.type === "equation"
               ? <InlineMath math={textItem.plain_text}></InlineMath>
+              :textItem.text === null 
+              ? <></>
               :textItem.text.link 
               ? <a href={textItem.text.link.url}>{textItem.text.content}</a> 
               : textItem.text.content}
