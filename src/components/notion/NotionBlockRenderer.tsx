@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Quote } from '../Quote';
+import 'katex/dist/katex.min.css';  // 引入样式
+import { BlockMath, InlineMath } from 'react-katex';
 
 //TODO: improve types here, cleanup the code
 type Props = {
@@ -39,6 +41,10 @@ export const NotionBlockRenderer = ({ block }: Props) => {
           <NotionText textItems={value.rich_text} />
         </h3>
       );
+    case 'equation':
+        return(
+            <BlockMath math={value.expression}></BlockMath>
+        );
     case 'bulleted_list':
       return (
         <ul className="list-outside list-disc">
@@ -145,34 +151,71 @@ export const NotionBlockRenderer = ({ block }: Props) => {
   }
 };
 
-const NotionText = ({ textItems }: { textItems: TextRichTextItemResponse[] }) => {
-  if (!textItems) {
-    return null;
-  }
+// const NotionText = ({ textItems }: { textItems: TextRichTextItemResponse[] }) => {
+//   if (!textItems) {
+//     return null;
+//   }
 
-  return (
-    <>
-      {textItems.map((textItem) => {
-        const {
-          annotations: { bold, code, color, italic, strikethrough, underline },
-          text,
-        } = textItem;
-        return (
-          <span
-            key={text.content}
-            className={clsx({
-              'font-bold': bold,
-              'font-mono font-semibold bg-zinc-600 text-zinc-200 px-1 py-0.5 m-1 rounded-md': code,
-              italic: italic,
-              'line-through': strikethrough,
-              underline: underline,
-            })}
-            style={color !== 'default' ? { color } : {}}
-          >
-            {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
-          </span>
-        );
-      })}
-    </>
-  );
-};
+//   return (
+//     <>
+//       {textItems.map((textItem) => {
+//         const {
+//           annotations: { bold, code, color, italic, strikethrough, underline },
+//           text,
+//         } = textItem;
+//         return (
+//           <span
+//             key={text.content}
+//             className={clsx({
+//               'font-bold': bold,
+//               'font-mono font-semibold bg-zinc-600 text-zinc-200 px-1 py-0.5 m-1 rounded-md': code,
+//               italic: italic,
+//               'line-through': strikethrough,
+//               underline: underline,
+//             })}
+//             style={color !== 'default' ? { color } : {}}
+//           >
+//             {text.link 
+//             ? <a href={text.link.url}>{text.content}</a> 
+//             : text.content}
+//           </span>
+//         );
+//       })}
+//     </>
+//   );
+// };
+
+const NotionText = ({ textItems }: { textItems: TextRichTextItemResponse[] }) => {
+    if (!textItems) {
+      return null;
+    }
+  
+    return (
+      <>
+        {textItems.map((textItem) => {
+          const {
+            annotations: { bold, code, color, italic, strikethrough, underline },
+          } = textItem;
+          return (
+            <span
+              key={textItem.plain_text}
+              className={clsx({
+                'font-bold': bold,
+                'font-mono font-semibold bg-zinc-600 text-zinc-200 px-1 py-0.5 m-1 rounded-md': code,
+                italic: italic,
+                'line-through': strikethrough,
+                underline: underline,
+              })}
+              style={color !== 'default' ? { color } : {}}
+            >
+              {textItem.type === "equation"
+              ? <InlineMath math={textItem.plain_text}></InlineMath>
+              :textItem.text.link 
+              ? <a href={textItem.text.link.url}>{textItem.text.content}</a> 
+              : textItem.text.content}
+            </span>
+          );
+        })}
+      </>
+    );
+  };
