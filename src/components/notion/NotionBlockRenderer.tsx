@@ -1,4 +1,4 @@
-import { TextRichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -185,7 +185,7 @@ export const NotionBlockRenderer = ({ block }: Props) => {
 //   );
 // };
 
-const NotionText = ({ textItems }: { textItems: TextRichTextItemResponse[] }) => {
+const NotionText = ({ textItems }: { textItems: RichTextItemResponse[] }) => {
     if (!textItems) {
       return null;
     }
@@ -210,8 +210,8 @@ const NotionText = ({ textItems }: { textItems: TextRichTextItemResponse[] }) =>
             >
               {textItem.type === "equation"
               ? <InlineMath math={textItem.plain_text}></InlineMath>
-              :textItem.text === null 
-              ? <></>
+              :textItem.type !== "text"
+              ?<p></p>
               :textItem.text.link 
               ? <a href={textItem.text.link.url}>{textItem.text.content}</a> 
               : textItem.text.content}
