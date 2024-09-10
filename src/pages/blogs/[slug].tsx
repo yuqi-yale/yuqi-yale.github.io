@@ -14,7 +14,7 @@ type Props = {
 };
 
 export default function Note({
-    note: { title, description, createdAt, slug },
+    note: { title, description, createdAt, slug, lastEditedAt},
     noteContent,
     previousPathname,
 }: Props & { previousPathname: string }) {
@@ -39,7 +39,7 @@ export default function Note({
                 url={url}
                 images={[openGraphImageUrl]}
                 title={title}
-                datePublished={createdAt}
+                datePublished={lastEditedAt}
                 authorName="Yuqi Zhao"
                 description={description}
             />
