@@ -19,14 +19,23 @@ export const NewsContent: NewsType[] = [
         },
     },
     {
-        title: '🧐🧐 Turning Complete',
+        title: '📝📝 Optical Waveguide Theory!',
         date: 'Sept 2024',
-        description: 'A fantastic game to build computer!',
+        description: 'New Blog for Waveguide Theory Introduction',
         link: {
-            label: '/blogs/turingComplete',
-            href: '/blogs/turingComplete'
+            label: '/blogs/optWaveguide',
+            href: '/blogs/optWaveguide'
         },
     },
+    // {
+    //     title: '🧐🧐 Turning Complete',
+    //     date: 'Sept 2024',
+    //     description: 'A fantastic game to build computer!',
+    //     link: {
+    //         label: '/blogs/turingComplete',
+    //         href: '/blogs/turingComplete'
+    //     },
+    // },
     {
         title: '🎓🎓 New PhD Student!',
         date: 'Feb 2024',
