@@ -2,7 +2,7 @@ import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import React, { useEffect, useMemo, useState } from 'react';
 
-import AvatarImage from '../../public/assets/blog/authors/yuqi.png';
+import AvatarImage from '../../public/assets/blog/authors/yuqi_large.jpg';
 import { Container } from '../components/Container';
 import { PageTitle } from '../components/PageTitle';
 import { Quote } from '../components/Quote';
@@ -40,11 +40,11 @@ export default function AboutMe() {
             <Container className="mt-16 sm:mt-32">
                 <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
                     <div className="lg:pl-20 space-y-40">
-                        <div className="max-w-xs px-2.5 lg:max-w-none">
+                        <div className="max-w-xs px-2.5">
                             <Image
                                 src={AvatarImage}
                                 alt=""
-                                sizes="(min-width: 1024px) 32rem, 20rem"
+                                sizes="32rem, 28rem"
                                 className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
                             />
                         </div>

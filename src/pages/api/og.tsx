@@ -28,7 +28,7 @@ const generateImage = async (req: NextRequest) => {
             </div>
             <img
               tw="rounded-lg w-32 h-32 self-end ml-auto"
-              src="https://yuqiweb.com/assets/blog/authors/yuqi.png"
+              src="https://yuqiweb.com/assets/blog/authors/yuqi.jpg"
               alt="Avatar"
             />
           </div>
