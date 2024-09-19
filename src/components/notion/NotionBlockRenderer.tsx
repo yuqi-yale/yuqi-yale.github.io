@@ -105,7 +105,7 @@ export const NotionBlockRenderer = ({ block }: Props) => {
             src={src}
             alt={caption}
             blurDataURL={value.placeholder}
-            width={value.size.height>300?300/value.size.width*value.size.height:value.size.width}
+            width={value.size.width>1024?1024:value.size.width}
             height={value.size.height}
           />
           {caption && <figcaption>{caption}</figcaption>}
