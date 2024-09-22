@@ -6,8 +6,14 @@ import Marathon from './Marathon.jpeg'
 import NYC from './NYC.jpeg'
 import Switzerland from './Switzerland.jpg'
 import Xinjiang from './Xinjiang.jpeg'
+import crab from './crab.jpg'
 
 export const travelImages = [
+    {
+        img: crab,
+        title: "Ferry landing state park, CT, 2024",
+        alt: "",
+      },
     {
         img: Chongqing,
         title: "Chongqing, 2024",
