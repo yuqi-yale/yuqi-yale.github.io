@@ -93,7 +93,7 @@ export const Experience = [
         herf: 'https://www.lgwrightlab.com/',
         position: 'PhD student',
         logo: Yalelogo,
-        start: 'May, 2024',
+        start: 'May 2024',
         end: 'Present',
     },
     {

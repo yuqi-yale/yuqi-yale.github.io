@@ -1,12 +1,38 @@
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { formatDate } from '../../lib/date';
 import { Note } from '../../lib/notesApi';
 import { Card } from '../Card';
 import { ANIMATION_FROM_PROPS, ANIMATION_TO_PROPS } from '../../lib/animation';
 import Image from 'next/image';
+
+interface LazyLoadImageProps {
+  src: string; // 图片路径
+  alt: string; // 图片描述
+  layout?: 'fixed' | 'intrinsic' | 'responsive' | 'fill'; // 可选的布局属性
+  width?: number; // 可选的宽度属性
+  height?: number; // 可选的高度属性
+  className?: string; // 可选的 className 属性
+}
+
+const LazyLoadImage: React.FC<LazyLoadImageProps> = ({ src, alt, className, ...props }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+      <div className={`transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${className || ''}`}>
+          <Image
+              src={src}
+              alt={alt}
+              {...props}
+              onLoadingComplete={() => setIsLoaded(true)} // 图片加载完成时调用
+              style={{ width: '100%', height: 'auto' }} // 自适应宽高
+          />
+      </div>
+  );
+};
+
 
 const StaticBadge = ({ className, children }: React.PropsWithChildren<{ className?: string }>) => (
     <span
@@ -52,7 +78,7 @@ export const NotePreview = ({ note, dense }: Props) => {
                 <Card className="md:col-span-2 relative">
                     {note.coverImage
                         ? <a href={`/blogs/${note.slug}`}>
-                            <Image width={250} height={120} className='scale-100 hover:scale-125' alt="" src={note.coverImage} />
+                            <LazyLoadImage width={250} height={120} className='scale-100 hover:scale-125' alt="ImageLoading, Please refresh" src={note.coverImage} />
                         </a>
                         : null}
                 </Card>
