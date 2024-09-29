@@ -3,7 +3,6 @@ import 'focus-visible';
 import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
 import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
 import React, { useEffect, useRef } from 'react';
 import Script from "next/script";
 
