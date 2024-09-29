@@ -7,6 +7,7 @@ import { formatDateMY } from '../../lib/date';
 import { Publication } from '../../lib/publicationApi';
 import { Card } from '../Card';
 import { ANIMATION_FROM_PROPS, ANIMATION_TO_PROPS } from '../../lib/animation';
+import { LazyLoadImage } from '../tools/LazyImage';
 
 const StaticBadge = ({ className, children }: React.PropsWithChildren<{ className?: string }>) => (
     <span
@@ -54,7 +55,7 @@ export const PublicationPreview = ({ note, dense }: Props) => {
                 <Card className="md:col-span-2 relative">
                     {note.coverImage
                         ? <a href={`/publications/${note.slug}`}>
-                            <Image width={250} height={120} className='scale-100 hover:scale-125' alt="" src={note.coverImage} />
+                            <LazyLoadImage width={250} height={120} className='scale-100 hover:scale-125' alt="" src={note.coverImage} />
                         </a>
                         : null}
                 </Card>

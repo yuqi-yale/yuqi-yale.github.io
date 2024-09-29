@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Quote } from '../Quote';
 import 'katex/dist/katex.min.css';  // 引入样式
 import { BlockMath, InlineMath } from 'react-katex';
+import { LazyLoadImage } from '../tools/LazyImage';
 
 //TODO: improve types here, cleanup the code
 type Props = {
@@ -99,12 +100,10 @@ export const NotionBlockRenderer = ({ block }: Props) => {
       const caption = value.caption ? value.caption[0]?.plain_text : '';
       return (
         <figure className='flex justify-center'>
-          <Image
+          <LazyLoadImage
             className="object-cover"
-            placeholder="blur"
             src={src}
             alt={caption}
-            blurDataURL={value.placeholder}
             width={value.size.width>1024?1024:value.size.width}
             height={value.size.height}
           />
