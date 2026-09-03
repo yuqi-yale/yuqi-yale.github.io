@@ -151,7 +151,7 @@ class PublicationApi {
                     createdAt: page.created_time,
                     lastEditedAt: page.last_edited_time,
                     // coverImage: page.cover?.type === 'external' ? page.cover.external.url : null,
-                    coverImage: page.properties.cover.files.length === 0
+                    coverImage: !page.properties.cover?.files?.length
                         ? null
                         : page.properties.cover.files[0]?.type === 'external'
                             ? page.properties.cover.files[0].external.url
@@ -161,28 +161,29 @@ class PublicationApi {
                             ? page.properties.hashtags.multi_select.map((tag) => tag.name)
                             : [],
                     title:
-                        'title' in page.properties.title ? page.properties.title.title[0].plain_text : '',
+                        'title' in page.properties.title ? page.properties.title.title[0]?.plain_text ?? '' : '',
                     description:
                         'rich_text' in page.properties.author
-                            ? page.properties.author.rich_text[0].plain_text
+                            ? page.properties.author.rich_text[0]?.plain_text ?? ''
                             : '',
                     slug:
-                        'rich_text' in page.properties.slug ? page.properties.slug.rich_text[0].plain_text : '',
+                        'rich_text' in page.properties.slug ? page.properties.slug.rich_text[0]?.plain_text ?? '' : '',
                     isPublished:
                         'checkbox' in page.properties.published ? page.properties.published.checkbox : false,
                     havePost:
                         'checkbox' in page.properties.havePost ? page.properties.havePost.checkbox : false,
                     year:
-                        'date' in page.properties.year ? page.properties.year.date!.start : '',
+                        'date' in page.properties.year ? page.properties.year.date?.start ?? '' : '',
                     author:
-                        'rich_text' in page.properties.author ? page.properties.author.rich_text[0].plain_text : '',
+                        'rich_text' in page.properties.author ? page.properties.author.rich_text[0]?.plain_text ?? '' : '',
                     express:
-                        'rich_text' in page.properties.express ? page.properties.express.rich_text[0].plain_text : '',
+                        'rich_text' in page.properties.express ? page.properties.express.rich_text[0]?.plain_text ?? '' : '',
                     url:
-                        'rich_text' in page.properties.url ? page.properties.url.rich_text[0].plain_text : '',
+                        'rich_text' in page.properties.url ? page.properties.url.rich_text[0]?.plain_text ?? '' : '',
                 };
             })
-            .filter((post) => post.isPublished);
+            // /publications/[slug] needs a slug to build a path, so drop rows without one.
+            .filter((post) => post.isPublished && post.slug);
     };
 
     private getPageContent = async (pageId: string) => {
