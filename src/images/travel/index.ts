@@ -7,8 +7,26 @@ import NYC from './NYC.jpeg'
 import Switzerland from './Switzerland.jpg'
 import Xinjiang from './Xinjiang.jpeg'
 import crab from './crab.jpg'
+import F1Austin from './F1Austin.jpeg'
+import Yousemiti from './Yousemiti.jpeg'
+import Washington from './Washington.jpeg'
 
 export const travelImages = [
+    {
+        img: Washington,
+        title: "Washington, DC, 2026",
+        alt: "",
+      },
+    {
+        img: Yousemiti,
+        title: "Yousemiti, CA, 2025",
+        alt: "",
+      },    
+    {
+        img: F1Austin,
+        title: "Austin, TX, 2025",
+        alt: "",
+      },
     {
         img: crab,
         title: "Ferry landing state park, CT, 2024",
