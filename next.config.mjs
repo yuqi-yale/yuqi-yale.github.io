@@ -3,6 +3,7 @@ const nextConfig = {
     reactStrictMode: true,
     experimental: {
         scrollRestoration: true,
+        instrumentationHook: true,
     },
     transpilePackages: ["geist"],
     images: {
@@ -30,9 +31,6 @@ const nextConfig = {
     //       },
     //     ];
     //   },
-    experimental: {
-        instrumentationHook: true
-    }
 };
 
 export default nextConfig;
